@@ -1,21 +1,28 @@
-#include <stdio.h>
-int main()
+#include<stdio.h>
+main()
 {
-    int n1, n2, i, gcd;
-
-    printf("Enter two integers: ");
-    scanf("%d %d", &n1, &n2);
-
-    for(i=1; i <= n1 && i <= n2; ++i)
-    {
-        // Checks if i is factor of both integers
-        if(n1%i==0 && n2%i==0)
-        {
-            gcd = i;
-    	}
+	int gcd,a,r,b;
+	int n,d;
+	printf("enter any two number\n");
+	scanf("%d\n %d",&a,&b);
+	if(a>b)
+	{
+		n=a;
+		d=b;
+	}
+		else
+		{
+			n=b;
+			d=a;
+		}
+		do
+		{
+			 r=n%d;
+			n=d;
+			d=r;
+		}
+		while(r>0);
+		gcd=n;
+		printf("gcd is %d",gcd);
 	}
 
-    printf("G.C.D of %d and %d is %d", n1, n2, gcd);
-
-    return 0;
-}

@@ -1,32 +1,25 @@
-
 #include<stdio.h>
- 
-void main()
+main()
 {
-    int n1,n2;
-    int gcd,lcm,remainder,numerator,denominator;
- 
-    printf("Enter two Numbers\n");
-    scanf("%d %d",&n1,&n2);
-    if (n1>n2)
-    {
-        numerator=n1;
-        denominator=n2;
-    }
-    else
-    {
-        numerator=n2;
-        denominator=n1;
-    }
-    remainder=numerator%denominator;
-    while(remainder!=0)
-    {
-        numerator=denominator;
-        denominator=remainder;
-        remainder=numerator%denominator;
-    }
-    gcd = denominator;
-    lcm = n1*n2/gcd;
-    printf("GCD of %d and %d = %d\n",n1,n2,gcd);
-    printf("LCM of %d and %d = %d\n",n1,n2,lcm);
+	int lcm=1,a,b;
+	printf("enter two numbers\n");
+	scanf("%d \n %d",&a,&b);
+	while(a>1 || b>1)
+	{
+		int d=2;
+		while(a%d!=0 && b%d!=0)
+		{
+			d++;
+		}
+		if(a%d==0)
+		{
+			a=a/d;
+		}
+		if(b%d==0)
+		{
+			b=b/d;
+		}
+		lcm=lcm*d;
+	}
+	printf("lcm is %d",lcm);
 }
